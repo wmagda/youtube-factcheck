@@ -1,0 +1,16 @@
+# Secrets
+.env
+
+# Generated output
+yt-subscriptions-today.txt
+fact-check-report.txt
+channel-scores.jsonl
+
+# Cache
+handle-cache.json
+
+# Logs
+*.log
+
+# Backups
+*.bak

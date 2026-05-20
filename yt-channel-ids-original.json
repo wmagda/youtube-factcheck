@@ -1,0 +1,517 @@
+[
+    {
+        "name": "Species | Documenting AGI",
+        "idOrHandle": "@AISpecies",
+        "link": "https://www.youtube.com/@AISpecies"
+    },
+    {
+        "name": "The Space Race",
+        "idOrHandle": "@TheSpaceRaceYT",
+        "link": "https://www.youtube.com/@TheSpaceRaceYT"
+    },
+    {
+        "name": "TechLinked",
+        "idOrHandle": "@techlinked",
+        "link": "https://www.youtube.com/@techlinked"
+    },
+    {
+        "name": "Astrum",
+        "idOrHandle": "@astrumspace",
+        "link": "https://www.youtube.com/@astrumspace"
+    },
+    {
+        "name": "GMHikaru",
+        "idOrHandle": "@GMHikaru",
+        "link": "https://www.youtube.com/@GMHikaru"
+    },
+    {
+        "name": "Wes Roth",
+        "idOrHandle": "@WesRoth",
+        "link": "https://www.youtube.com/@WesRoth"
+    },
+    {
+        "name": "bycloud",
+        "idOrHandle": "@bycloudAI",
+        "link": "https://www.youtube.com/@bycloudAI"
+    },
+    {
+        "name": "Welch Labs",
+        "idOrHandle": "@WelchLabs",
+        "link": "https://www.youtube.com/@WelchLabs"
+    },
+    {
+        "name": "PBS Space Time",
+        "idOrHandle": "@pbsspacetime",
+        "link": "https://www.youtube.com/@pbsspacetime"
+    },
+    {
+        "name": "Squintist",
+        "idOrHandle": "@Squintist",
+        "link": "https://www.youtube.com/@Squintist"
+    },
+    {
+        "name": "InsideAI",
+        "idOrHandle": "@weareinsideAI",
+        "link": "https://www.youtube.com/@weareinsideAI"
+    },
+    {
+        "name": "Fireship",
+        "idOrHandle": "@Fireship",
+        "link": "https://www.youtube.com/@Fireship"
+    },
+    {
+        "name": "Low Level",
+        "idOrHandle": "@LowLevelTV",
+        "link": "https://www.youtube.com/@LowLevelTV"
+    },
+    {
+        "name": "Kurzgesagt – In a Nutshell",
+        "idOrHandle": "@kurzgesagt",
+        "link": "https://www.youtube.com/@kurzgesagt"
+    },
+    {
+        "name": "Matthew Berman",
+        "idOrHandle": "@matthew_berman",
+        "link": "https://www.youtube.com/@matthew_berman"
+    },
+    {
+        "name": "Big Think",
+        "idOrHandle": "@bigthink",
+        "link": "https://www.youtube.com/@bigthink"
+    },
+    {
+        "name": "New Scientist",
+        "idOrHandle": "@NewScientist",
+        "link": "https://www.youtube.com/@NewScientist"
+    },
+    {
+        "name": "Elephants in Rooms - Ken LaCorte",
+        "idOrHandle": "@ElephantsInRooms",
+        "link": "https://www.youtube.com/@ElephantsInRooms"
+    },
+    {
+        "name": "Marius & Elena Official",
+        "idOrHandle": "@MariusElenaBachata",
+        "link": "https://www.youtube.com/@MariusElenaBachata"
+    },
+    {
+        "name": "History of the Universe",
+        "idOrHandle": "@HistoryoftheUniverse",
+        "link": "https://www.youtube.com/@HistoryoftheUniverse"
+    },
+    {
+        "name": "Dr Ben Miles",
+        "idOrHandle": "@DrBenMiles",
+        "link": "https://www.youtube.com/@DrBenMiles"
+    },
+    {
+        "name": "HealthyGamerGG",
+        "idOrHandle": "@HealthyGamerGG",
+        "link": "https://www.youtube.com/@HealthyGamerGG"
+    },
+    {
+        "name": "Veritasium",
+        "idOrHandle": "@veritasium",
+        "link": "https://www.youtube.com/@veritasium"
+    },
+    {
+        "name": "Better Stack",
+        "idOrHandle": "@betterstack",
+        "link": "https://www.youtube.com/@betterstack"
+    },
+    {
+        "name": "TheAIGRID",
+        "idOrHandle": "@TheAiGrid",
+        "link": "https://www.youtube.com/@TheAiGrid"
+    },
+    {
+        "name": "3Blue1Brown",
+        "idOrHandle": "@3blue1brown",
+        "link": "https://www.youtube.com/@3blue1brown"
+    },
+    {
+        "name": "The School of Life",
+        "idOrHandle": "@theschooloflifetv",
+        "link": "https://www.youtube.com/@theschooloflifetv"
+    },
+    {
+        "name": "Fact Quickie",
+        "idOrHandle": "@FactQuickie",
+        "link": "https://www.youtube.com/@FactQuickie"
+    },
+    {
+        "name": "Astrum Extra",
+        "idOrHandle": "@astrumextra",
+        "link": "https://www.youtube.com/@astrumextra"
+    },
+    {
+        "name": "Arvin Ash",
+        "idOrHandle": "@ArvinAsh",
+        "link": "https://www.youtube.com/@ArvinAsh"
+    },
+    {
+        "name": "Palisade Research",
+        "idOrHandle": "@PalisadeResearch",
+        "link": "https://www.youtube.com/@PalisadeResearch"
+    },
+    {
+        "name": "AI Search",
+        "idOrHandle": "@theAIsearch",
+        "link": "https://www.youtube.com/@theAIsearch"
+    },
+    {
+        "name": "AI Explained",
+        "idOrHandle": "@aiexplained-official",
+        "link": "https://www.youtube.com/@aiexplained-official"
+    },
+    {
+        "name": "National Geographic",
+        "idOrHandle": "@NatGeo",
+        "link": "https://www.youtube.com/@NatGeo"
+    },
+    {
+        "name": "History Mapped Out",
+        "idOrHandle": "@History_Mapped_Out",
+        "link": "https://www.youtube.com/@History_Mapped_Out"
+    },
+    {
+        "name": "Sideprojects",
+        "idOrHandle": "@Sideprojects",
+        "link": "https://www.youtube.com/@Sideprojects"
+    },
+    {
+        "name": "Social Dance TV",
+        "idOrHandle": "@SocialDanceTV",
+        "link": "https://www.youtube.com/@SocialDanceTV"
+    },
+    {
+        "name": "Two Minute Papers",
+        "idOrHandle": "@TwoMinutePapers",
+        "link": "https://www.youtube.com/@TwoMinutePapers"
+    },
+    {
+        "name": "Framing Logic",
+        "idOrHandle": "@FramingLogic",
+        "link": "https://www.youtube.com/@FramingLogic"
+    },
+    {
+        "name": "Fexl",
+        "idOrHandle": "@fexl",
+        "link": "https://www.youtube.com/@fexl"
+    },
+    {
+        "name": "Duncan Rogoff | AI Automation",
+        "idOrHandle": "@duncanrogoff",
+        "link": "https://www.youtube.com/@duncanrogoff"
+    },
+    {
+        "name": "Undecided with Matt Ferrell",
+        "idOrHandle": "@UndecidedTechnology",
+        "link": "https://www.youtube.com/@UndecidedTechnology"
+    },
+    {
+        "name": "Mild Mambo Club",
+        "idOrHandle": "@MildMamboClub",
+        "link": "https://www.youtube.com/@MildMamboClub"
+    },
+    {
+        "name": "Curt Jaimungal",
+        "idOrHandle": "@TheoriesofEverything",
+        "link": "https://www.youtube.com/@TheoriesofEverything"
+    },
+    {
+        "name": "Cool Worlds",
+        "idOrHandle": "@CoolWorldsLab",
+        "link": "https://www.youtube.com/@CoolWorldsLab"
+    },
+    {
+        "name": "TLDR News Global",
+        "idOrHandle": "@TLDRnewsGLOBAL",
+        "link": "https://www.youtube.com/@TLDRnewsGLOBAL"
+    },
+    {
+        "name": "NOVA PBS Official",
+        "idOrHandle": "@novapbs",
+        "link": "https://www.youtube.com/@novapbs"
+    },
+    {
+        "name": "WarFronts",
+        "idOrHandle": "@warographics643",
+        "link": "https://www.youtube.com/@warographics643"
+    },
+    {
+        "name": "Nikodem Bartnik",
+        "idOrHandle": "@nikodembartnik",
+        "link": "https://www.youtube.com/@nikodembartnik"
+    },
+    {
+        "name": "Rovin Karki",
+        "idOrHandle": "@RovinKarki",
+        "link": "https://www.youtube.com/@RovinKarki"
+    },
+    {
+        "name": "SpaceRip",
+        "idOrHandle": "@SpaceRip",
+        "link": "https://www.youtube.com/@SpaceRip"
+    },
+    {
+        "name": "Productive Peter",
+        "idOrHandle": "@ProductivePeter",
+        "link": "https://www.youtube.com/@ProductivePeter"
+    },
+    {
+        "name": "Voided Thoughts",
+        "idOrHandle": "@voidedthoughts",
+        "link": "https://www.youtube.com/@voidedthoughts"
+    },
+    {
+        "name": "Your Mate Tom",
+        "idOrHandle": "@yourmatetom",
+        "link": "https://www.youtube.com/@yourmatetom"
+    },
+    {
+        "name": "Zouk Music",
+        "idOrHandle": "@zoukmusicbrasil",
+        "link": "https://www.youtube.com/@zoukmusicbrasil"
+    },
+    {
+        "name": "Krish Naik",
+        "idOrHandle": "@krishnaik06",
+        "link": "https://www.youtube.com/@krishnaik06"
+    },
+    {
+        "name": "TED-Ed",
+        "idOrHandle": "@TEDEd",
+        "link": "https://www.youtube.com/@TEDEd"
+    },
+    {
+        "name": "Academind",
+        "idOrHandle": "@academind",
+        "link": "https://www.youtube.com/@academind"
+    },
+    {
+        "name": "freeCodeCamp.org",
+        "idOrHandle": "@freecodecamp",
+        "link": "https://www.youtube.com/@freecodecamp"
+    },
+    {
+        "name": "GJ_Chess",
+        "idOrHandle": "@GJChess",
+        "link": "https://www.youtube.com/@GJChess"
+    },
+    {
+        "name": "Andrew Huberman",
+        "idOrHandle": "@hubermanlab",
+        "link": "https://www.youtube.com/@hubermanlab"
+    },
+    {
+        "name": "MinuteEarth",
+        "idOrHandle": "@MinuteEarth",
+        "link": "https://www.youtube.com/@MinuteEarth"
+    },
+    {
+        "name": "Thistle Technologies",
+        "idOrHandle": "@thistletech",
+        "link": "https://www.youtube.com/@thistletech"
+    },
+    {
+        "name": "Thoughty2",
+        "idOrHandle": "@Thoughty2",
+        "link": "https://www.youtube.com/@Thoughty2"
+    },
+    {
+        "name": "Harvard Business Review",
+        "idOrHandle": "@harvardbusinessreview",
+        "link": "https://www.youtube.com/@harvardbusinessreview"
+    },
+    {
+        "name": "Justin Sung",
+        "idOrHandle": "@JustinSung",
+        "link": "https://www.youtube.com/@JustinSung"
+    },
+    {
+        "name": "Escaping Ordinary (B.C Marx)",
+        "idOrHandle": "@escaping.ordinary",
+        "link": "https://www.youtube.com/@escaping.ordinary"
+    },
+    {
+        "name": "TribalNeed",
+        "idOrHandle": "@tribalneed",
+        "link": "https://www.youtube.com/@tribalneed"
+    },
+    {
+        "name": "The Shogunate",
+        "idOrHandle": "@TheShogunate",
+        "link": "https://www.youtube.com/@TheShogunate"
+    },
+    {
+        "name": "AsapSCIENCE",
+        "idOrHandle": "@AsapSCIENCE",
+        "link": "https://www.youtube.com/@AsapSCIENCE"
+    },
+    {
+        "name": "SmarterEveryDay",
+        "idOrHandle": "@smartereveryday",
+        "link": "https://www.youtube.com/@smartereveryday"
+    },
+    {
+        "name": "Yes Theory",
+        "idOrHandle": "@YesTheory",
+        "link": "https://www.youtube.com/@YesTheory"
+    },
+    {
+        "name": "Two Bit da Vinci",
+        "idOrHandle": "@TwoBitDaVinci",
+        "link": "https://www.youtube.com/@TwoBitDaVinci"
+    },
+    {
+        "name": "La Suerte Dance School",
+        "idOrHandle": "@LaSuerteDanceSchool",
+        "link": "https://www.youtube.com/@LaSuerteDanceSchool"
+    },
+    {
+        "name": "TLDR Business",
+        "idOrHandle": "@TLDRbusiness",
+        "link": "https://www.youtube.com/@TLDRbusiness"
+    },
+    {
+        "name": "History of the Earth",
+        "idOrHandle": "@HistoryoftheEarth",
+        "link": "https://www.youtube.com/@HistoryoftheEarth"
+    },
+    {
+        "name": "PBS Infinite Series",
+        "idOrHandle": "@pbsinfiniteseries",
+        "link": "https://www.youtube.com/@pbsinfiniteseries"
+    },
+    {
+        "name": "Josh Mandel",
+        "idOrHandle": "@JoshMandelMD",
+        "link": "https://www.youtube.com/@JoshMandelMD"
+    },
+    {
+        "name": "Walk off the Earth",
+        "idOrHandle": "@walkofftheearth",
+        "link": "https://www.youtube.com/@walkofftheearth"
+    },
+    {
+        "name": "AWS Meetup Group",
+        "idOrHandle": "@awsmeetupgroup9416",
+        "link": "https://www.youtube.com/@awsmeetupgroup9416"
+    },
+    {
+        "name": "Bottlecap Creative | Japan",
+        "idOrHandle": "@bottlecapcreative",
+        "link": "https://www.youtube.com/@bottlecapcreative"
+    },
+    {
+        "name": "Bujin Munkhbaatar",
+        "idOrHandle": "@bujinmunkhbaatar3318",
+        "link": "https://www.youtube.com/@bujinmunkhbaatar3318"
+    },
+    {
+        "name": "Dallas Bachata Festival",
+        "idOrHandle": "@DallasBachataFestival",
+        "link": "https://www.youtube.com/@DallasBachataFestival"
+    },
+    {
+        "name": "Andres y Yessica",
+        "idOrHandle": "@AndresyYessica",
+        "link": "https://www.youtube.com/@AndresyYessica"
+    },
+    {
+        "name": "TechLead",
+        "idOrHandle": "@TechLead",
+        "link": "https://www.youtube.com/@TechLead"
+    },
+    {
+        "name": "Dance Dojo",
+        "idOrHandle": "@thedancedojo",
+        "link": "https://www.youtube.com/@thedancedojo"
+    },
+    {
+        "name": "PBS Eons",
+        "idOrHandle": "@eons",
+        "link": "https://www.youtube.com/@eons"
+    },
+    {
+        "name": "Dancesurfing Academy",
+        "idOrHandle": "@Dancesurfing",
+        "link": "https://www.youtube.com/@Dancesurfing"
+    },
+    {
+        "name": "AWS User Group UK",
+        "idOrHandle": "@AWSUserGroupUK",
+        "link": "https://www.youtube.com/@AWSUserGroupUK"
+    },
+    {
+        "name": "Fun Fun Function",
+        "idOrHandle": "@funfunfunction",
+        "link": "https://www.youtube.com/@funfunfunction"
+    },
+    {
+        "name": "Bachatowa Grupa Uderzeniowa",
+        "idOrHandle": "@bachatowagrupauderzeniowa1477",
+        "link": "https://www.youtube.com/@bachatowagrupauderzeniowa1477"
+    },
+    {
+        "name": "Siraj Raval",
+        "idOrHandle": "@SirajRaval",
+        "link": "https://www.youtube.com/@SirajRaval"
+    },
+    {
+        "name": "Crazy Lion Productions",
+        "idOrHandle": "@CrazyLionProductions",
+        "link": "https://www.youtube.com/@CrazyLionProductions"
+    },
+    {
+        "name": "Firebase",
+        "idOrHandle": "@Firebase",
+        "link": "https://www.youtube.com/@Firebase"
+    },
+    {
+        "name": "salsawithsilvia",
+        "idOrHandle": "@salsawithsilvia",
+        "link": "https://www.youtube.com/@salsawithsilvia"
+    },
+    {
+        "name": "Salsa Beat Machine",
+        "idOrHandle": "@SalsaBeatMachine",
+        "link": "https://www.youtube.com/@SalsaBeatMachine"
+    },
+    {
+        "name": "Quanta Magazine",
+        "idOrHandle": "@QuantaScienceChannel",
+        "link": "https://www.youtube.com/@QuantaScienceChannel"
+    },
+    {
+        "name": "Cercle",
+        "idOrHandle": "@Cercle",
+        "link": "https://www.youtube.com/@Cercle"
+    },
+    {
+        "name": "Astrum Earth",
+        "idOrHandle": "@AstrumEarth",
+        "link": "https://www.youtube.com/@AstrumEarth"
+    },
+    {
+        "name": "Fort Collins Salsa Collective",
+        "idOrHandle": "@SalsaCollective",
+        "link": "https://www.youtube.com/@SalsaCollective"
+    },
+    {
+        "name": "Chicago Salsa Congress",
+        "idOrHandle": "@chicagosalsa",
+        "link": "https://www.youtube.com/@chicagosalsa"
+    },
+    {
+        "name": "CALDAC TV",
+        "idOrHandle": "@caldacon",
+        "link": "https://www.youtube.com/@caldacon"
+    },
+    {
+        "name": "VdanceClub",
+        "idOrHandle": "@VdanceClubSchool",
+        "link": "https://www.youtube.com/@VdanceClubSchool"
+    }
+]
