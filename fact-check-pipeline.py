@@ -288,6 +288,10 @@ IGNORE:
 - "The video argues/says" framing
 - Vague or untestable statements
 - Things that are clearly true by definition
+- Hypothetical scenarios ("imagine if", "what if", "suppose", "let's say")
+- Made-up names for illustrative examples (e.g., "Bob went to the store")
+- Fictional stories or thought experiments
+- Clearly fictional or satirical content
 
 OUTPUT — strict JSON array, NOTHING ELSE. No explanation, no preamble, no markdown:
 [
@@ -341,8 +345,10 @@ CLAIM:
 WEB SEARCH RESULTS:
 {snippets_text}
 
+IMPORTANT: If this claim is from a hypothetical scenario ("imagine if", "what if", "suppose"), a made-up example with fictional names, a thought experiment, or clearly fictional content — classify it as "hypothetical" and explain why.
+
 Reply with ONLY this JSON object. NO preamble, NO explanation, NO markdown code blocks:
-{{"verdict": "supported|contradicted|disputed|unverifiable", "confidence": 0-100, "note": "one-sentence explanation"}}"""
+{{"verdict": "supported|contradicted|disputed|unverifiable|hypothetical", "confidence": 0-100, "note": "one-sentence explanation"}}"""
 
     resp = call_lmstudio(prompt, temperature=0.1, max_tokens=1024, timeout=VERIFY_TIMEOUT)
     text = _extract_text(resp)
@@ -367,24 +373,29 @@ def score_video(claims: list[dict], verifications: list[dict]) -> dict:
     disputed    = verdicts.count('disputed')
     unverifiable = verdicts.count('unverifiable')
     errors      = verdicts.count('error')
+    hypothetical = verdicts.count('hypothetical')
     total       = len(verifications)
+
+    # Hypothetical claims don't count toward the score
+    verifiable_total = max(total - unverifiable - errors - hypothetical, 1)
 
     if contradicted >= 2:
         verdict = 'INCORRECT'
     elif contradicted + disputed >= 2:
         verdict = 'CAUTION'
-    elif supported >= max(total - unverifiable - errors, 1):
+    elif supported >= verifiable_total:
         verdict = 'ACCURATE'
     else:
         verdict = 'PARTIAL'
 
     return {
         'verdict':       verdict,
-        'score':         supported / max(total, 1),
+        'score':         supported / verifiable_total,
         'supported':     supported,
         'contradicted':  contradicted,
         'disputed':      disputed,
         'unverifiable':  unverifiable,
+        'hypothetical':  hypothetical,
         'errors':        errors,
         'total':         total,
     }
@@ -485,11 +496,12 @@ def main():
             f"  Supported: {video_score.get('supported',0)} | "
             f"Contradicted: {video_score.get('contradicted',0)} | "
             f"Unverifiable: {video_score.get('unverifiable',0)} | "
+            f"Hypothetical: {video_score.get('hypothetical',0)} | "
             f"Avg confidence: {avg_confidence:.0f}%\n"
         )
         for v in verifications:
             icon = {'supported': '✅', 'contradicted': '❌', 'disputed': '⚠️',
-                    'unverifiable': '⏭️', 'error': '❓'}.get(v['verdict'], '❓')
+                    'unverifiable': '⏭️', 'hypothetical': '🧪', 'error': '❓'}.get(v['verdict'], '❓')
             block += f"    {icon} [{v.get('confidence',0)}%] {v['claim'][:90]}\n"
             note = v.get('note', '')
             if note:

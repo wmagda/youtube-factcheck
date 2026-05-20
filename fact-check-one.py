@@ -180,6 +180,8 @@ def main():
         f'extract up to {MAX_CLAIMS} SHORT, SPECIFIC, SUSPICIOUS factual claims '
         f'(numbers, dates, names, specs, events that could be wrong or misleading).\n\n'
         f'IGNORE: opinions, jokes, predictions, "the speaker says", "the video argues".\n\n'
+        f'IGNORE ALSO: hypothetical scenarios ("imagine if", "what if", "suppose"),\n'
+        f'made-up names for illustrative examples, fictional stories, thought experiments.\n\n'
         f'OUTPUT — strict JSON array, no markdown fences, no extra text:\n'
         f'[{{"claim":"claim text here","type":"type"}}]\n\n'
         f'=== TRANSCRIPT ===\n{transcript}',
