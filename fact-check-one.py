@@ -176,8 +176,9 @@ def main():
     print('\n▶  Extracting claims (single LLM call, full transcript in context)...')
     t0 = time.time()
     raw = call_llm(
-        f'Given this full video transcript, extract up to {MAX_CLAIMS} SHORT, '
-        f'SPECIFIC, VERIFIABLE factual claims (numbers, dates, names, specs, events).\n\n'
+        f'You are a skeptical fact-checker. From this full video transcript, '
+        f'extract up to {MAX_CLAIMS} SHORT, SPECIFIC, SUSPICIOUS factual claims '
+        f'(numbers, dates, names, specs, events that could be wrong or misleading).\n\n'
         f'IGNORE: opinions, jokes, predictions, "the speaker says", "the video argues".\n\n'
         f'OUTPUT — strict JSON array, no markdown fences, no extra text:\n'
         f'[{{"claim":"claim text here","type":"type"}}]\n\n'
@@ -187,24 +188,42 @@ def main():
     )
     print(f'   Extraction done in {time.time()-t0:.0f}s')
 
-    # ── Parse claims ────────────────────────────────────────────────────────
+    # ── Parse claims — try multiple strategies ────────────────────────────────
     claims = []
-    for pattern in [r'\[.*?\]', r'\{.*?\}']:
-        m = re.search(pattern, raw, re.DOTALL)
-        if m:
-            try:
-                parsed = json.loads(m.group())
-                if isinstance(parsed, list):
-                    claims = [
-                        c for c in parsed
-                        if isinstance(c, dict)
-                        and 'claim' in c
-                        and isinstance(c['claim'], str)
-                        and len(c['claim']) > 25
-                    ]
-                    break
-            except json.JSONDecodeError:
-                continue
+
+    # Strategy 1: find last complete [ ... ] block
+    pos = raw.rfind(']')
+    while pos > 0:
+        candidate = raw[:pos + 1]
+        try:
+            parsed = json.loads(candidate)
+            if isinstance(parsed, list):
+                claims = [
+                    c for c in parsed
+                    if isinstance(c, dict)
+                    and 'claim' in c
+                    and isinstance(c['claim'], str)
+                    and len(c['claim']) > 25
+                ]
+                break
+        except json.JSONDecodeError:
+            pos = raw.rfind(']', 0, pos - 1)
+            continue
+
+    # Strategy 2: try parsing the whole text as-is
+    if not claims:
+        try:
+            parsed = json.loads(raw)
+            if isinstance(parsed, list):
+                claims = [
+                    c for c in parsed
+                    if isinstance(c, dict)
+                    and 'claim' in c
+                    and isinstance(c['claim'], str)
+                    and len(c['claim']) > 25
+                ]
+        except json.JSONDecodeError:
+            pass
 
     if not claims:
         print('\n   ⚠️  Could not extract verifiable claims. Raw output:')

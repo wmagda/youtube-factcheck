@@ -234,21 +234,65 @@ def _first_json_block(text: str) -> str | None:
     return None
 
 
+def _extract_json(text: str) -> dict | None:
+    """Try multiple strategies to extract a JSON object from LLM output."""
+    # Strategy 1: first balanced {...} block
+    block = _first_json_block(text)
+    if block:
+        try:
+            return json.loads(block)
+        except json.JSONDecodeError:
+            pass
+
+    # Strategy 2: last balanced {...} block
+    pos = text.rfind('}')
+    while pos > 0:
+        candidate = text[pos:]
+        depth = 0
+        for i in range(len(candidate) - 1, -1, -1):
+            if candidate[i] == '}':
+                depth += 1
+            elif candidate[i] == '{':
+                depth -= 1
+                if depth == 0:
+                    candidate = candidate[i:]
+                    try:
+                        return json.loads(candidate)
+                    except json.JSONDecodeError:
+                        pass
+                    break
+        pos = text.rfind('}', 0, pos - 1)
+
+    # Strategy 3: try parsing the whole text
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        pass
+
+    return None
+
+
 # ── Claim extraction ───────────────────────────────────────────────────────
 
 def extract_claims(transcript: str, title: str) -> list[dict]:
-    """Use LLM to extract specific factual claims from a transcript."""
-    prompt = f"""Given this YouTube video transcript snippet, extract up to {CLAIMS_MAX} SPECIFIC factual claims that can be independently verified via web search.
+    """Use LLM to extract ONLY suspicious factual claims from a transcript."""
+    prompt = f"""You are a skeptical fact-checker. From this YouTube video transcript, extract up to {CLAIMS_MAX} factual claims that are SUSPICIOUS — i.e., claims that seem potentially false, misleading, or worth verifying.
 
-Focus ONLY on: numerical statistics, dates, historical events, scientific facts, technical specs, named entities, and concrete measurements.
+Focus on claims that:
+- Make specific, verifiable assertions (numbers, dates, names, events, technical specs)
+- Could be wrong, exaggerated, or taken out of context
+- Would be worth double-checking against web sources
 
-IGNORE: opinions, predictions, subjective statements, "the video argues", "the speaker says".
+IGNORE:
+- Opinions, predictions, subjective statements
+- "The video argues/says" framing
+- Vague or untestable statements
+- Things that are clearly true by definition
 
-OUTPUT — strict JSON array, nothing else:
+OUTPUT — strict JSON array, NOTHING ELSE. No explanation, no preamble, no markdown:
 [
   {{"claim": "exact factual claim text", "type": "numerical|historical|scientific|technical|entity"}},
-  {{"claim": "...", "type": "..."}},
-  ...
+  {{"claim": "...", "type": "..."}}
 ]
 
 Title: {title}
@@ -297,24 +341,17 @@ CLAIM:
 WEB SEARCH RESULTS:
 {snippets_text}
 
-Reply with ONLY this JSON:
-{{
-  "verdict": "supported|contradicted|disputed|unverifiable",
-  "confidence": 0-100,
-  "note": "one-sentence explanation"
-}}"""
+Reply with ONLY this JSON object. NO preamble, NO explanation, NO markdown code blocks:
+{{"verdict": "supported|contradicted|disputed|unverifiable", "confidence": 0-100, "note": "one-sentence explanation"}}"""
 
     resp = call_lmstudio(prompt, temperature=0.1, max_tokens=1024, timeout=VERIFY_TIMEOUT)
     text = _extract_text(resp)
-    block = _first_json_block(text)
-    if not block:
+    result = _extract_json(text)
+    if not result:
         log(f'    [WARN] No verdict JSON; raw: {text[:120]}')
         return {'verdict': 'error', 'confidence': 0, 'note': 'json parse error'}
 
-    try:
-        return json.loads(block)
-    except json.JSONDecodeError:
-        return {'verdict': 'error', 'confidence': 0, 'note': 'json error'}
+    return result
 
 
 # ── Scoring ────────────────────────────────────────────────────────────────
