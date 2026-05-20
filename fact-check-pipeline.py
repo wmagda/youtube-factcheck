@@ -40,7 +40,7 @@ SCORES_FILE     = HOME / 'Projects/youtube-factcheck/channel-scores.jsonl'
 LMSTUDIO_URL    = 'http://192.168.0.195:1234'
 LMSTUDIO_MODEL  = 'qwen/qwen3.6-35b-a3b'
 LMSTUDIO_TOKEN  = os.environ.get('LMSTUDIO_TOKEN', '')
-TRANSCRIPT_MAX  = 1500          # chars of transcript sent to LLM (keep it short)
+TRANSCRIPT_MAX  = None          # None = use full transcript
 CLAIMS_MAX      = 6             # max claims to extract per video
 VERIFY_TIMEOUT  = 300           # per-claim verification timeout
 EXTRACT_TIMEOUT = 600           # claim extraction timeout (local GPU inference)
@@ -300,8 +300,8 @@ OUTPUT — strict JSON array, NOTHING ELSE. No explanation, no preamble, no mark
 ]
 
 Title: {title}
-Transcript (first {TRANSCRIPT_MAX} chars):
-{transcript[:TRANSCRIPT_MAX]}"""
+Transcript:
+{transcript}"""
 
     resp  = call_lmstudio(prompt, temperature=0.2, max_tokens=4096, timeout=EXTRACT_TIMEOUT)
     text  = _extract_text(resp)
@@ -430,13 +430,13 @@ def main():
         return
 
     log(f'Input: {len(urls)} URLs from {INPUT_FILE.name}')
-    log(f'Claim extraction: {CLAIMS_MAX} max each, {TRANSCRIPT_MAX} char transcript')
+    log(f'Claim extraction: {CLAIMS_MAX} max each, full transcript')
     log(f'Timeouts: extraction={EXTRACT_TIMEOUT}s  verification={VERIFY_TIMEOUT}s\n')
 
     report_lines = [
         f'YouTube Fact-Check Report — {date_str}',
         '=' * 60,
-        f'Config: {CLAIMS_MAX} claims/video | {TRANSCRIPT_MAX}-char transcripts',
+        f'Config: {CLAIMS_MAX} claims/video | full transcript',
         f'US EXTRACT_TIMEOUT={EXTRACT_TIMEOUT}s  VERIFY_TIMEOUT={VERIFY_TIMEOUT}s',
         '',
     ]
